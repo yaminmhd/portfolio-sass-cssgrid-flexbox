@@ -108,6 +108,7 @@ main {
 
   .job {
     background: lighten($primary-color, 5);
+    border-radius: 5px;
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
   }
@@ -118,7 +119,28 @@ main {
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr;
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    div {
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      color: #fff;
+      display: inline-block;
+      border-radius: 2px;
+      &:nth-child(1) {
+        background: cornflowerblue;
+      }
+      &:nth-child(2) {
+        background: goldenrod;
+      }
+      &:nth-child(3) {
+        background: chocolate;
+      }
+    }
+  }
   img {
     width: 100%;
     border: 3px #fff solid;
@@ -132,25 +154,25 @@ main {
 }
 
 //Contact page
-.boxes{
+.boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem;
 
-  div{
+  div {
     font-size: 2rem;
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     @include easeOut;
 
-    &:hover{
+    &:hover {
       padding: 0.5rem 1.5rem;
       background: $secondary-color;
       color: set-text-color($secondary-color);
-      span{
+      span {
         color: set-text-color($secondary-color);
       }
     }
